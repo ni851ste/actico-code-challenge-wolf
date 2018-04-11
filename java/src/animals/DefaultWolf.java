@@ -1,9 +1,9 @@
 package animals;
 
 // Optional code here
-public class Wolf extends Animal {
+public class DefaultWolf extends Animal {
     // Optional code here
-    public Wolf() {
+    public DefaultWolf() {
         super('W');
         /* Optional code here */
     }

@@ -11,7 +11,7 @@ public class Wild {
             Bear.class,
             Lion.class,
             Stone.class,
-            Wolf.class,
+            DefaultWolf.class,
             // TODO: Add your own class here
     };
     public static final int MAP_SIZE = Math.round((float)Math.sqrt(classes.length+3)*20);;
