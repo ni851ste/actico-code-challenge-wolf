@@ -7,7 +7,13 @@ import javax.swing.*;
 
 public class Wild {
     
-    private static final Class[] classes = { Bear.class, Lion.class, Stone.class, Wolf.class };
+    private static final Class[] classes = {
+            Bear.class,
+            Lion.class,
+            Stone.class,
+            Wolf.class,
+            // TODO: Add your own class here
+    };
     public static final int MAP_SIZE = Math.round((float)Math.sqrt(classes.length+3)*20);;
 
     public static void main(String[] args) {

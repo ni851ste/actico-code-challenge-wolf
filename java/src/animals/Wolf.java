@@ -1,28 +1,18 @@
-
 package animals;
 
+// Optional code here
 public class Wolf extends Animal {
-    public Wolf() { super('W'); }
-    public Attack fight(char c) { 
-        switch (c) {
-            case 'B':
-                return Attack.SCISSORS;
-            case 'L':
-                return Attack.SCISSORS;
-            case 'S':
-                return Attack.PAPER;
-            default:
-                return Attack.ROCK;
-        } 
+    // Optional code here
+    public Wolf() {
+        super('W');
+        /* Optional code here */
+    }
+    public Attack fight(char c) {
+        /* Required code here. Must return an Attack. */
+        return Attack.ROCK; // can be removed for something else
     }
     public Move move() {
-        if (surroundings[0][1] == ' ')
-            return Move.UP;
-        else if (surroundings[1][2] == ' ')
-            return Move.RIGHT;
-        else if (surroundings[1][0] == ' ')
-            return Move.LEFT;
-        else
-            return Move.DOWN;
+        /* Required code here. Must return a Move. */
+        return Move.DOWN; // can be removed for something else
     }
 }
