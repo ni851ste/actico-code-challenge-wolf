@@ -85,23 +85,25 @@ public class Game {
                     Animal a = cell.get(rand1);
                     Animal b = cell.get(rand2);
                     Attack aTack, bTack;
-                    try { aTack = a.fight(b.letter); } 
+                    try { aTack = a.fight(b.letter); }
                     catch (Exception e) { aTack = Attack.SUICIDE; }
                     try {  bTack = b.fight(a.letter); }
                     catch (Exception e) { bTack = Attack.SUICIDE; }
-                    
+
+
                     if (aTack == bTack) {
-                        cell.remove((Animal)(Math.random() > 0.5 ? a : b));
+                        cell.remove((Math.random() > 0.5 ? a : b));
+
                     } else {
                         switch (aTack) {
                             case ROCK:
-                                cell.remove((Animal)(bTack == Attack.PAPER ? a : b));
+                                cell.remove((bTack == Attack.PAPER ? a : b));
                                 break;
                             case PAPER:
-                                cell.remove((Animal)(bTack == Attack.SCISSORS ? a : b));
+                                cell.remove((bTack == Attack.SCISSORS ? a : b));
                                 break;
                             case SCISSORS:
-                                cell.remove((Animal)(bTack == Attack.ROCK ? a : b));
+                                cell.remove(bTack == Attack.ROCK ? a : b);
                                 break;
                         }
                     } 
