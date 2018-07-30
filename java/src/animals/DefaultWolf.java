@@ -13,43 +13,44 @@ public class DefaultWolf extends Animal
    //                   but may be out of date when asked to fight.
    public DefaultWolf()
    {
+      // TODO enter your unique letter
       super('D');
       /* Optional code here */
    }
 
    public Attack fight(char c)
    {
-      /* Required code here. Must return an Attack. */
+      // TODO implement this method
       return Attack.ROCK; // can be removed for something else
    }
 
    public Move move()
    {
-      /* Required code here. Must return a Move. */
+      // TODO implement this method
       return Move.DOWN; // can be removed for something else
    }
 
    private char lookLeft()
    {
-
-      return ' ';
+      //TODO return the character of the field on the left side
+      return ' '; // can be removed for something else
    }
 
    private char lookRight()
    {
-
-      return ' ';
+      //TODO return the character of the field on the right side
+      return ' '; // can be removed for something else
    }
 
    private char lookUp()
    {
-
-      return ' ';
+      //TODO return the character of the field above
+      return ' '; // can be removed for something else
    }
 
    private char lookDown()
    {
-
-      return ' ';
+      //TODO return the character of the field below
+      return ' '; // can be removed for something else
    }
 }

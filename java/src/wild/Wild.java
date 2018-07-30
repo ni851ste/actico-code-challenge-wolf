@@ -3,13 +3,11 @@ package wild;
 
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 import javax.swing.*;
 
-import animals.Animal;
 import animals.Bear;
 import animals.DefaultWolf;
 import animals.LaurinWolf;
@@ -21,19 +19,17 @@ public class Wild
 
    private static List<Class> classes = new ArrayList<>();
 
-
-
    public static void main(String[] args)
    {
       Collections.addAll(classes,
-      Bear.class,
-      Lion.class,
-      Stone.class,
-      DefaultWolf.class,
-      LaurinWolf.class
-      // TODO: Add your own class here
-   );
-      int size = Math.round((float) Math.sqrt(Wild.classes.size()+3) * 20);
+         Bear.class,
+         Lion.class,
+         Stone.class,
+         DefaultWolf.class,
+         LaurinWolf.class
+         // TODO: Add your own class here
+      );
+      int size = Math.round((float) Math.sqrt(Wild.classes.size() + 3) * 20);
       Game game = new Game(size);
 
       Statistics stats = new Statistics(game, Wild.classes);
@@ -59,7 +55,7 @@ public class Wild
       gui.pack();
       gui.setVisible(true);
 
-      while (true)
+      while (Game.running)
       {
          game.iterate();
          stats.update();
