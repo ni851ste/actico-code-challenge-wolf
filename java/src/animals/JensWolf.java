@@ -21,12 +21,11 @@ public class JensWolf extends Animal {
     public Attack fight(char c) {
         switch (c) {
             case 'L':
-                return Attack.SCISSORS;
             case 'B':
                 return Attack.SCISSORS;
             case 'S':
-                return Attack.PAPER;
-            case 'W': return Attack.PAPER;
+            case 'W':
+            case 'D': return Attack.PAPER;
             default:
                 switch (c % 3) {
                     case 0:
@@ -35,13 +34,26 @@ public class JensWolf extends Animal {
                         return Attack.ROCK;
                     case 2:
                         return Attack.SCISSORS;
-                    default: return Attack.SCISSORS;
+                    default: return Attack.ROCK;
 
                 }
         }
     }
 
     public Move move() {
+        if(lookDown() == 'S'){
+            return  Move.DOWN;
+        }
+        if(lookUp() == 'S'){
+            return Move.UP;
+        }
+        if(lookRight() == 'S'){
+            return Move.RIGHT;
+        }
+        if(lookLeft() == 'S'){
+            return Move.LEFT;
+        }
+
         if (lookLeft() == 'L'){
             switch (lookLeft() % 3){
                 case 0: return Move.UP;
