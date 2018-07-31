@@ -60,12 +60,12 @@ public final class Statistics
 
          List<String> livingSpecies = living.entrySet().stream()
             .filter(s -> s.getValue() > 0)
-            .sorted(Map.Entry.<Class, Integer>comparingByValue().reversed())
+            .sorted(Map.Entry.<Class, Integer> comparingByValue().reversed())
             .map(s -> s.getKey().getSimpleName() + ": " + s.getValue() + " survivors")
             .collect(Collectors.toList());
 
          List<String> extinctSpecies = extinct.entrySet().stream()
-            .sorted(Map.Entry.<Class, Long>comparingByValue().reversed())
+            .sorted(Map.Entry.<Class, Long> comparingByValue().reversed())
             .map(s -> s.getKey().getSimpleName() + ": " + getLifetime(s.getValue()) + " seconds until extinction")
             .collect(Collectors.toList());
 

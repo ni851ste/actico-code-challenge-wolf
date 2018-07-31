@@ -8,12 +8,19 @@ public abstract class Animal
 
    public enum Attack
    {
-      ROCK, PAPER, SCISSORS, SUICIDE
+      ROCK,
+      PAPER,
+      SCISSORS,
+      SUICIDE
    }
 
    public enum Move
    {
-      UP, RIGHT, DOWN, LEFT, HOLD
+      UP,
+      RIGHT,
+      DOWN,
+      LEFT,
+      HOLD
    }
 
    public Animal(char letter)
