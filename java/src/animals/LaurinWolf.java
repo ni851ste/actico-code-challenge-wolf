@@ -13,7 +13,7 @@ public class LaurinWolf extends Animal
    //                   but may be out of date when asked to fight.
    public LaurinWolf()
    {
-      super('W');
+      super('Y');
       /* Optional code here */
    }
 
