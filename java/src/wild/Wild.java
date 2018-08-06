@@ -1,68 +1,81 @@
 
 package wild;
 
-import animals.Bear;
-import animals.DefaultWolf;
-import animals.JensWolf;
-import animals.LaurinWolf;
-import animals.Lion;
-import animals.Stone;
-
-import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Wild {
+import javax.swing.*;
 
-    private static List<Class> classes = new ArrayList<>();
+import animals.Bear;
+import animals.DefaultWolf;
+import animals.JensWolf;
+import animals.LarryWolf;
+import animals.LaurinWolf;
+import animals.Lion;
+import animals.MaxWolf;
+import animals.Stone;
+import animals.emlwolf;
 
-    public static void main(String[] args) {
-        Collections.addAll(classes,
-                Bear.class,
-                Lion.class,
-                Stone.class,
-                DefaultWolf.class,
-                LaurinWolf.class,
-                JensWolf.class
-        );
-        int size = Math.round((float) Math.sqrt(Wild.classes.size() + 3) * 20);
-        Game game = new Game(size);
+public class Wild
+{
 
-        Statistics stats = new Statistics(game, Wild.classes);
+   private static List<Class> classes = new ArrayList<>();
 
-        for (Class c : Wild.classes)
-            game.populate(c, 100);
-        stats.update();
+   public static void main(String[] args)
+   {
+      Collections.addAll(classes,
+         Bear.class,
+         Lion.class,
+         Stone.class,
+         DefaultWolf.class,
+         LaurinWolf.class,
+         JensWolf.class,
+         emlwolf.class,
+         LarryWolf.class,
+         MaxWolf.class
+      );
+      int size = Math.round((float) Math.sqrt(Wild.classes.size() + 3) * 20);
+      Game game = new Game(size);
 
-        JFrame gui = new JFrame();
-        gui.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        Container pane = gui.getContentPane();
+      Statistics stats = new Statistics(game, Wild.classes);
 
-        JLabel boardLabel = new JLabel();
-        boardLabel.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 12));
-        boardLabel.setText(game.toString());
-        pane.add(boardLabel, BorderLayout.WEST);
+      for (Class c : Wild.classes)
+         game.populate(c, 100);
+      stats.update();
 
-        JLabel statsLabel = new JLabel();
-        statsLabel.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 12));
-        statsLabel.setText(stats.toString());
-        pane.add(statsLabel, BorderLayout.EAST);
+      JFrame gui = new JFrame();
+      gui.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+      Container pane = gui.getContentPane();
 
-        gui.pack();
-        gui.setVisible(true);
+      JLabel boardLabel = new JLabel();
+      boardLabel.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 12));
+      boardLabel.setText(game.toString());
+      pane.add(boardLabel, BorderLayout.WEST);
 
-        while (Game.running) {
-            game.iterate();
-            stats.update();
-            boardLabel.setText(game.toString());
-            statsLabel.setText(stats.toString());
-            try {
-                Thread.sleep(50);
-            } catch (InterruptedException e) {
-            }
-        }
-    }
+      JLabel statsLabel = new JLabel();
+      statsLabel.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 12));
+      statsLabel.setText(stats.toString());
+      pane.add(statsLabel, BorderLayout.EAST);
+
+      gui.pack();
+      gui.setVisible(true);
+
+      while (Game.running)
+      {
+         game.iterate();
+         stats.update();
+         boardLabel.setText(game.toString());
+         statsLabel.setText(stats.toString());
+         try
+         {
+            Thread.sleep(50);
+         }
+         catch (InterruptedException e)
+         {
+         }
+      }
+   }
 
 }
