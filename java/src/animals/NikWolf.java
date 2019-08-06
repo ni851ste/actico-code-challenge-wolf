@@ -1,52 +1,51 @@
 package animals;
 
-// Optional code here
 public class NikWolf extends Animal
 {
-   // Optional code here
 
-   // Available variables:
-   // - surroundings    A zero indexed, 3 by 3 matrix of characters that represent nearby animals.
-   //                   Empty tiles are represented by a space character (' '). You are at surroundings[1][1].
-   //                   For example, to your right would be surroundings[1][2], and above you is surroundings[0][1].
-   //                   Your surroundings are updated just before being asked to move,
-   //                   but may be out of date when asked to fight.
    public NikWolf()
    {
-      // TODO enter your unique letter
       super('N');
-      /* Optional code here */
    }
 
    public Attack fight(char c)
    {
-      if(c == 'S')
+      if (c == 'S')
          return Attack.PAPER;
-      if(c == 'B')
+      if (c == 'B')
          return Attack.SCISSORS;
-      if(c == 'L')
+      if (c == 'L')
          return Attack.SCISSORS;
       return Attack.ROCK;
    }
 
    public Move move()
    {
-      if(leftAlone())
-         return Move.HOLD;
-      if(lookLeft() != ' ')
+      if (grouped())
          return Move.RIGHT;
-      if(lookUp() != ' ')
-         return Move.DOWN;
-      if(lookRight() != ' ')
-         return Move.LEFT;
-      if(lookDown() != ' ')
-         return Move.UP;
-      return  Move.HOLD;
+
+      return randomMove();
    }
 
-   private boolean leftAlone()
+   private Move randomMove()
    {
-      return lookLeft() == ' ' && lookUp() == ' ' && lookRight() == ' ' && lookDown() == ' ';
+      double randomlyRolledNumber = Math.random();
+
+      if (randomlyRolledNumber < 0.25)
+         return Move.LEFT;
+      if (randomlyRolledNumber < 0.5)
+         return Move.UP;
+      if (randomlyRolledNumber < 0.75)
+         return Move.RIGHT;
+      if (randomlyRolledNumber < 1)
+         return Move.DOWN;
+
+      return Move.HOLD;
+   }
+
+   private boolean grouped()
+   {
+      return lookLeft() == 'N' || lookUp() == 'N' || lookRight() == 'N' || lookDown() == 'N';
    }
 
    private char lookLeft()

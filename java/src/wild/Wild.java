@@ -66,7 +66,7 @@ public class Wild
          statsLabel.setText(stats.toString());
          try
          {
-            Thread.sleep(25);
+            Thread.sleep(50);
          }
          catch (InterruptedException e)
          {
