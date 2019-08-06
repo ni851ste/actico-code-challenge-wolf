@@ -11,12 +11,9 @@ import javax.swing.*;
 import animals.Bear;
 import animals.DefaultWolf;
 import animals.JensWolf;
-import animals.LarryWolf;
 import animals.LaurinWolf;
 import animals.Lion;
-import animals.MaxWolf;
 import animals.Stone;
-import animals.emlwolf;
 
 public class Wild
 {
@@ -31,10 +28,7 @@ public class Wild
          Stone.class,
          DefaultWolf.class,
          LaurinWolf.class,
-         JensWolf.class,
-         emlwolf.class,
-         LarryWolf.class,
-         MaxWolf.class
+         JensWolf.class
       );
       int size = Math.round((float) Math.sqrt(Wild.classes.size() + 3) * 20);
       Game game = new Game(size);
