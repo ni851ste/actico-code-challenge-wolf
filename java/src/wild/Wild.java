@@ -13,6 +13,7 @@ import animals.DefaultWolf;
 import animals.JensWolf;
 import animals.LaurinWolf;
 import animals.Lion;
+import animals.NikWolf;
 import animals.Stone;
 
 public class Wild
@@ -28,7 +29,8 @@ public class Wild
          Stone.class,
          DefaultWolf.class,
          LaurinWolf.class,
-         JensWolf.class
+         JensWolf.class,
+         NikWolf.class
       );
       int size = Math.round((float) Math.sqrt(Wild.classes.size() + 3) * 20);
       Game game = new Game(size);
@@ -64,7 +66,7 @@ public class Wild
          statsLabel.setText(stats.toString());
          try
          {
-            Thread.sleep(50);
+            Thread.sleep(25);
          }
          catch (InterruptedException e)
          {
