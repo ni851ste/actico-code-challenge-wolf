@@ -14,7 +14,7 @@ public class GroupWolf_1 extends Animal
    public GroupWolf_1()
    {
       // TODO enter your unique letter
-      super('D');
+      super('1');
       /* Optional code here */
    }
 
