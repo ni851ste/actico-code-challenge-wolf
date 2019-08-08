@@ -20,37 +20,76 @@ public class GroupWolf_2 extends Animal
 
    public Attack fight(char c)
    {
-      // TODO implement this method
-      return Attack.ROCK; // can be removed for something else
+      switch (c) {
+         case 'L':
+            return Attack.SCISSORS;
+         case 'B':
+            return Attack.SCISSORS;
+         case 'S':
+            return Attack.PAPER;
+         default:
+            return Attack.PAPER;
+      }
    }
 
-   public Move move()
-   {
-      // TODO implement this method
-      return Move.DOWN; // can be removed for something else
+   public Move move() {
+
+      if (lookDown() == 'L' || lookDown() == '1' || lookDown() == '3')
+      {
+         return Move.UP;
+      }
+      else if (lookLeft() == 'L' || lookLeft() == '1' || lookLeft() == '3')
+      {
+         return Move.RIGHT;
+      }
+      else if (lookRight() == 'L' || lookRight() == '1' || lookRight() == '3')
+      {
+         return Move.LEFT;
+      }
+      else if (lookUp() == 'L' || lookUp() == '1' || lookUp() == '3')
+      {
+         return Move.DOWN;
+      }
+      else if (lookLeft() == 'S'  || lookLeft() == 'N' || lookLeft() == 'B')
+      {
+         return Move.LEFT;
+      }
+      else if (lookRight() == 'S' || lookRight() == 'N' || lookRight() == 'B')
+      {
+         return Move.RIGHT;
+      }
+      else if (lookUp() == 'S' || lookUp() == 'N' || lookUp() == 'B')
+      {
+         return Move.UP;
+      }
+      else if (lookDown() == 'S' || lookDown() == 'N' || lookDown() == 'B')
+      {
+       return Move.DOWN;
+      }
+      return Move.UP;
    }
 
    private char lookLeft()
    {
       //TODO return the character of the field on the left side
-      return ' '; // can be removed for something else
+      return surroundings[1] [0]; // can be removed for something else
    }
 
    private char lookRight()
    {
       //TODO return the character of the field on the right side
-      return ' '; // can be removed for something else
+      return surroundings[1] [2]; // can be removed for something else
    }
 
    private char lookUp()
    {
       //TODO return the character of the field above
-      return ' '; // can be removed for something else
+      return surroundings[0] [1]; // can be removed for something else
    }
 
    private char lookDown()
    {
       //TODO return the character of the field below
-      return ' '; // can be removed for something else
+      return surroundings[2] [1]; // can be removed for something else
    }
 }
