@@ -10,7 +10,6 @@ import javax.swing.*;
 
 import animals.Bear;
 import animals.DefaultWolf;
-import animals.JensWolf;
 import animals.LaurinWolf;
 import animals.Lion;
 import animals.NikWolf;
