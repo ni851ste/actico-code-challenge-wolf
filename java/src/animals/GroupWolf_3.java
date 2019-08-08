@@ -21,13 +21,66 @@ public class GroupWolf_3 extends Animal
    public Attack fight(char c)
    {
       // TODO implement this method
-      return Attack.ROCK; // can be removed for something else
+      switch(c) {
+         case 'L':
+            return Attack.SCISSORS;
+         case 'B':
+            return Attack.SCISSORS;
+         case 'S':
+         case 'N':
+         case 'Y':
+            return Attack.PAPER;
+
+         default:
+            return Math.random() > 0.5 ? Attack.PAPER : Attack.ROCK;
+      }
+
    }
 
    public Move move()
    {
-      // TODO implement this method
-      return Move.DOWN; // can be removed for something else
+
+         /* Required code here. Must return a Move. */
+         if (lookDown() == '1')
+         {
+            return Move.UP;
+         }
+         else if (lookLeft() == '1')
+         {
+            return Move.RIGHT;
+         }
+         else if (lookRight() == '1')
+         {
+            return Move.LEFT;
+         }
+         else if (lookUp() == '1')
+         {
+            return Move.DOWN;
+         }
+
+            /* Required code here. Must return a Move. */
+            if (lookDown() == '2')
+            {
+               return Move.UP;
+            }
+            else if (lookLeft() == '2')
+            {
+               return Move.RIGHT;
+            }
+            else if (lookRight() == '2')
+            {
+               return Move.LEFT;
+            }
+            else if (lookUp() == '2')
+            {
+               return Move.DOWN;
+            }
+
+         else
+         {
+            return Math.random() > 0.5 ? (Math.random() > 0.5 ? Move.DOWN : Move.UP) :
+                    (Math.random() > 0.5 ? Move.LEFT : Move.RIGHT);
+         }
    }
 
    private char lookLeft()
