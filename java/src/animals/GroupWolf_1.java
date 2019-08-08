@@ -21,36 +21,105 @@ public class GroupWolf_1 extends Animal
    public Attack fight(char c)
    {
       // TODO implement this method
-      return Attack.ROCK; // can be removed for something else
+       switch (c) {
+           case 'L':
+               return Attack.SCISSORS;
+           case 'B':
+               return Attack.SCISSORS;
+           case 'S':
+               return Attack.PAPER;
+           default:
+               return Attack.PAPER;
+       }
+
    }
 
-   public Move move()
-   {
-      // TODO implement this method
-      return Move.DOWN; // can be removed for something else
+    public Move move() {
+        if (lookDown() == 'S') {
+            return Move.DOWN;
+        }
+
+        if (lookLeft() == 'S') {
+            return Move.LEFT;
+        }
+
+        if (lookUp() == 'S') {
+            return Move.UP;
+        }
+
+        if (lookRight() == 'S') {
+            return Move.RIGHT;
+        }
+
+        if (lookDown() == 'B') {
+            return Move.DOWN;
+        }
+
+        if (lookLeft() == 'B') {
+            return Move.LEFT;
+        }
+
+        if (lookUp() == 'B') {
+            return Move.UP;
+        }
+
+        if (lookRight() == 'B') {
+            return Move.RIGHT;
+        }
+
+        if (lookRight() == 'L') {
+            return Move.LEFT;
+        }
+
+        if (lookDown() == 'L') {
+            return Move.UP;
+        }
+
+        if (lookLeft() == 'L') {
+            return Move.RIGHT;
+        }
+
+
+        if (lookUp() == 'L') {
+            return Move.DOWN;
+        }
+
+        if (lookUp() == 'N' || lookUp() == '2' || lookUp() == 'Y' || lookUp() == '3') {
+            return Move.DOWN;
+        }
+
+        if (lookDown() == 'N' || lookDown() == '2' || lookDown() == 'Y' || lookDown() == '3') {
+            return Move.UP;
+        }
+
+        if (lookLeft() == 'N' || lookLeft() == '2' || lookLeft() == 'Y' || lookLeft() == '3') {
+            return Move.RIGHT;
+        }
+
+        if (lookRight() == 'N' || lookRight() == '2' || lookRight() == 'Y' || lookRight() == '3') {
+            return Move.LEFT;
+        }
+
+        return Move.DOWN;
    }
 
    private char lookLeft()
    {
-      //TODO return the character of the field on the left side
-      return ' '; // can be removed for something else
+       return surroundings[1][0];
    }
 
    private char lookRight()
    {
-      //TODO return the character of the field on the right side
-      return ' '; // can be removed for something else
+       return surroundings[1][2];
    }
 
    private char lookUp()
    {
-      //TODO return the character of the field above
-      return ' '; // can be removed for something else
+       return surroundings[0][1];
    }
 
    private char lookDown()
    {
-      //TODO return the character of the field below
-      return ' '; // can be removed for something else
+       return surroundings[2][1];
    }
 }
