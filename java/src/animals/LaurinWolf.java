@@ -72,7 +72,7 @@ public class LaurinWolf extends Animal
 
    private char lookUp()
    {
-      return surroundings[2][1];
+       return surroundings[0][1];
    }
 
    private char lookDown()
