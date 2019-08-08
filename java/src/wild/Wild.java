@@ -1,35 +1,28 @@
 
 package wild;
 
+import animals.*;
+
+import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import javax.swing.*;
-
-import animals.Bear;
-import animals.DefaultWolf;
-import animals.LaurinWolf;
-import animals.Lion;
-import animals.NikWolf;
-import animals.Stone;
-
-public class Wild
-{
+public class Wild {
 
    private static List<Class> classes = new ArrayList<>();
 
-   public static void main(String[] args)
-   {
+   public static void main(String[] args) {
       Collections.addAll(classes,
-         Bear.class,
-         Lion.class,
-         Stone.class,
-         DefaultWolf.class,
-         LaurinWolf.class,
-         JensWolf.class,
-         NikWolf.class
+              Bear.class,
+              Lion.class,
+              Stone.class,
+              LaurinWolf.class,
+              NikWolf.class,
+              GroupWolf_1.class,
+              GroupWolf_2.class,
+              GroupWolf_3.class
       );
       int size = Math.round((float) Math.sqrt(Wild.classes.size() + 3) * 20);
       Game game = new Game(size);
@@ -57,18 +50,14 @@ public class Wild
       gui.pack();
       gui.setVisible(true);
 
-      while (Game.running)
-      {
+      while (Game.running) {
          game.iterate();
          stats.update();
          boardLabel.setText(game.toString());
          statsLabel.setText(stats.toString());
-         try
-         {
+         try {
             Thread.sleep(50);
-         }
-         catch (InterruptedException e)
-         {
+         } catch (InterruptedException e) {
          }
       }
    }
